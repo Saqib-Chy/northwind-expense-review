@@ -394,8 +394,7 @@ These are order-of-magnitude estimates; actual usage depends on receipt length a
 
 ## Scaling to 10,000 submissions/day
 
-10k submissions/day ≈ **60k–80k receipts/day** ≈ ~180k–240k OpenAI calls/day. Model cost lands around
-**$50–$100/day** (~$1.5k–$3k/month) at current `gpt-4o-mini` pricing — cheap relative to the manual
+10k submissions/day ≈ **60k–80k receipts/day**  `gpt-4o-mini` pricing — cheap relative to the manual
 review it replaces. The real work is throughput and reliability, not cost:
 
 1. **Async processing.** Replace the synchronous request with: upload → enqueue (SQS / a Postgres-backed
