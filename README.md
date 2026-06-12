@@ -25,7 +25,6 @@ URL: https://northwind-expense-review-production.up.railway.app/
 - [Cost per submission](#cost-per-submission)
 - [Scaling to 10,000 submissions/day](#scaling-to-10000-submissionsday)
 - [Known limitations](#known-limitations)
-- [Next steps](#next-steps)
 
 ---
 
