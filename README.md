@@ -7,6 +7,8 @@ citations, and a confidence score**. A human always makes the final call and can
 with an auditable comment. The system also answers ad-hoc policy questions with grounded citations and
 declines questions outside the policy library.
 
+URL: https://northwind-expense-review-production.up.railway.app/
+
 ---
 
 ## Table of contents
@@ -441,20 +443,4 @@ workers) and the retrieval index.
 
 ---
 
-## Next steps
 
-In rough priority order:
-
-1. **Fix the guardrail's blast radius.** Prune only the *unverified* citations and keep the verdict if at
-   least one citation verifies; only force `needs_review` when *no* citation survives. This alone should
-   meaningfully lower the false `needs_review` rate.
-2. **Raise retrieval recall.** Add hybrid search + a lightweight reranker, and follow `DOC-### §x.y`
-   cross-references one hop so cited-but-not-retrieved clauses are available to verify against.
-3. **OCR fallback.** Render text-poor PDFs to images and route them through the vision path.
-4. **Confidence-based model escalation.** Re-run low-confidence or high-amount items on a stronger model
-   before surfacing them.
-5. **Richer eval.** Add retrieval quality (recall@k against labeled relevant docs) and citation-level
-   precision/recall to the harness, not just verdict accuracy.
-6. **Operational hardening for scale.** The queue + worker architecture and ANN index from the scaling
-   section.
-```
