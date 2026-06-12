@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --compliant: #16a34a;
+  --flagged: #d97706;
+  --rejected: #dc2626;
+  --needs-review: #7c3aed;
+}
+
+/*
+ * Base element styles must live in the `base` cascade layer. Tailwind v4 registers
+ * its utilities in the `utilities` layer; any *unlayered* rule (e.g. a bare `a {}`)
+ * would beat layered utilities regardless of specificity, which made `text-white`
+ * on link buttons get overridden by `a { color: inherit }` (invisible text).
+ */
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white p-6 shadow-sm;
+  }
+
+  .badge-compliant {
+    @apply rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800;
+  }
+
+  .badge-flagged {
+    @apply rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800;
+  }
+
+  .badge-rejected {
+    @apply rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-800;
+  }
+
+  .badge-needs-review {
+    @apply rounded-full bg-violet-100 px-3 py-1 text-sm font-medium text-violet-800;
+  }
+}

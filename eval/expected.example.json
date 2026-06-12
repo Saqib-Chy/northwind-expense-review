@@ -1,0 +1,44 @@
+{
+  "submissions": [
+    {
+      "employeeExternalId": "NW-04821",
+      "expectedStatus": "flagged",
+      "lineItems": [
+        {
+          "receiptFilename": "01_united_airlines.pdf",
+          "expectedStatus": "compliant",
+          "expectedCategory": "airfare",
+          "expectedCitationDocIds": ["TEP-005"]
+        },
+        {
+          "receiptFilename": "02_marriott_denver.pdf",
+          "expectedStatus": "compliant",
+          "expectedCategory": "lodging"
+        },
+        {
+          "receiptFilename": "03_uber_to_hotel.pdf",
+          "expectedStatus": "compliant",
+          "expectedCategory": "ground_transport"
+        },
+        {
+          "receiptFilename": "07_dinner_avanti.pdf",
+          "expectedStatus": "flagged",
+          "expectedCategory": "meals"
+        },
+        {
+          "receiptFilename": "08_uber_to_airport.pdf",
+          "expectedStatus": "compliant",
+          "expectedCategory": "ground_transport"
+        }
+      ]
+    }
+  ],
+  "policyChat": [
+    { "question": "What is the capital of France?", "expectRefusal": true },
+    {
+      "question": "What class of service is allowed for domestic flights?",
+      "expectRefusal": false,
+      "expectCitationDocIds": ["TEP-005"]
+    }
+  ]
+}

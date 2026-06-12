@@ -1,0 +1,2 @@
+# Drop Northwind policy PDFs here (~30 files).
+# Run: npm run db:ingest

@@ -1,0 +1,3 @@
+# Drop the five sample submission folders here.
+# Each folder should contain employee_info.json and receipts/.
+# Employee seed prefers these over fallback data when present.
